@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
 
 export function Hero() {
@@ -12,9 +15,12 @@ export function Hero() {
                 {/* IMAGEM DE FUNDO */}
                 <Image
                   src="/banner.webp"
-                  alt="Oficina de motos 4mmotos"
+                  alt="Oficina de motos 4mmotos em Sabará MG - Manutenção e revisão de motocicletas"
                   fill
                   priority
+                  fetchPriority="high"
+                  sizes="100vw"
+                  quality={85}
                   className="object-cover"
                 />
 
@@ -22,7 +28,12 @@ export function Hero() {
                 <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-black/10" />
 
                 {/* CONTEÚDO */}
-                <div className="relative z-10 flex flex-col gap-4 text-left max-w-2xl">
+                <motion.div
+                  className="relative z-10 flex flex-col gap-4 text-left max-w-2xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                   <h1 className="text-white text-5xl font-black leading-tight tracking-tight @[480px]:text-7xl uppercase italic">
                     Sua moto merece o{" "}
                     <span className="text-primary">melhor</span> cuidado
@@ -32,10 +43,15 @@ export function Hero() {
                     Manutenção, revisão e performance para sua moto rodar com
                     total segurança e potência máxima em qualquer estrada.
                   </p>
-                </div>
+                </motion.div>
 
                 {/* BOTÕES */}
-                <div className="relative z-10 flex flex-col @[480px]:flex-row gap-4 mt-6 w-full @[480px]:w-auto">
+                <motion.div
+                  className="relative z-10 flex flex-col @[480px]:flex-row gap-4 mt-6 w-full @[480px]:w-auto"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                >
                   <Button
                     variant="primary"
                     size="md"
@@ -51,7 +67,7 @@ export function Hero() {
                   >
                     Ver Serviços
                   </Button>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

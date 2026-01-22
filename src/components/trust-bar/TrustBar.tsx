@@ -1,3 +1,20 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
 export function TrustBar() {
   const items = [
     {
@@ -25,9 +42,19 @@ export function TrustBar() {
   return (
     <section className="bg-primary/10 py-10 border-y border-white/5" id="trust">
       <div className="max-w-7xl mx-auto px-6 lg:px-40">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
           {items.map((item) => (
-            <div key={item.icon} className="flex items-center gap-4 group">
+            <motion.div
+              key={item.icon}
+              className="flex items-center gap-4 group"
+              variants={itemVariants}
+            >
               {/* Ícone */}
               <span
                 className="material-symbols-outlined text-primary group-hover:scale-110 transition-transform"
@@ -42,9 +69,9 @@ export function TrustBar() {
                 <br />
                 <span className="text-slate-500">{item.line2}</span>
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

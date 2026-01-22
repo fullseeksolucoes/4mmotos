@@ -6,12 +6,12 @@ interface ServicesCardProps {
 
 export function ServicesCard({ title, description, icon }: ServicesCardProps) {
     return (
-        <div className="metallic-gradient p-8 rounded-xl flex flex-col gap-6 hover:-translate-y-2 transition">
-            <div className="w-14 h-14 flex items-center justify-center bg-primary/20 text-primary rounded-lg">
+        <div className="metallic-gradient p-8 rounded-xl flex flex-col gap-6 hover:-translate-y-2 transition h-full">
+            <div className="w-14 h-14 flex items-center justify-center bg-primary/20 text-primary rounded-lg shrink-0">
                 <span className="material-symbols-outlined text-3xl">{icon}</span>
             </div>
 
-            <div>
+            <div className="flex flex-col flex-1">
                 <h3 className="text-xl font-bold text-white uppercase italic mb-4">
                     {title}
                 </h3>

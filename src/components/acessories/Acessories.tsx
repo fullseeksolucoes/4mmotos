@@ -1,5 +1,21 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { AcessoriesCard } from "./AcessoriesCard";
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: { staggerChildren: 0.15 },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const acessories = [
     {
@@ -17,13 +33,19 @@ const acessories = [
         title: "Jaqueta/Capas",
         description: "Equipamentos de Proteção Individual (EPI) desenvolvidos para proteger o corpo contra abrasão, impactos e condições climáticas, oferecendo segurança, conforto e mobilidade durante a pilotagem.",
     },
-]
+];
 
 export function Acessories() {
     return (
         <section className="px-6 lg:px-40 py-20" id="acessories">
             <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col mb-16">
+                <motion.div
+                    className="flex flex-col mb-16"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
                     <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-2">
                         Equipamentos
                     </span>
@@ -44,13 +66,22 @@ export function Acessories() {
                             </Link>
                         </div>
                     </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                </motion.div>
+
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                >
                     {acessories.map((acessory) => (
-                        <AcessoriesCard key={acessory.title} {...acessory} />
+                        <motion.div key={acessory.title} variants={itemVariants}>
+                            <AcessoriesCard {...acessory} />
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
-    )
+    );
 }
