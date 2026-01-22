@@ -9,7 +9,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "4M Motos | Seu motor merece o melhor cuidado",
+  title: "4MMotos | Sua moto merece o melhor cuidado",
   description:
     "Oficina especializada em manutenção, revisão e performance de motocicletas.",
 };

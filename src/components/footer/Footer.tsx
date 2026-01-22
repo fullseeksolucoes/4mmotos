@@ -3,7 +3,7 @@ import { MapPin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-background px-6 lg:px-40 pt-20 pb-8 border-t border-white/10">
+    <footer className="bg-background px-6 lg:px-40 pt-20 pb-8 border-t border-white/10" id="footer">
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
         {/* Parte superior */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-sm text-muted">
@@ -98,7 +98,7 @@ export function Footer() {
         {/* Linha inferior */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted">
           <p className="text-center md:text-left max-w-3xl leading-relaxed">
-            © {new Date().getFullYear()} 4M Motos. Todos os direitos reservados.
+            © {new Date().getFullYear()} 4MMotos. Todos os direitos reservados.
           </p>
           <p>
             Desenvolvido por{" "}

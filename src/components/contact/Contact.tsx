@@ -18,7 +18,7 @@ export function Contact() {
 
         <div>
           <h2 className="text-5xl font-black uppercase italic mb-6">
-            Fale com a 4M Motos
+            Fale com a 4MMotos
           </h2>
           <p className="text-muted text-xl max-w-2xl">
             Dúvidas sobre sua revisão ou quer um orçamento de preparação?

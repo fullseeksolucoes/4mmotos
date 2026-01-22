@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ServicesCard } from "./ServicesCard";
 
 export function Services() {
   const services = [
@@ -37,25 +38,14 @@ export function Services() {
           <div className="h-1 w-20 bg-primary rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map(([title, desc, icon]) => (
-            <div
+            <ServicesCard
               key={title}
-              className="metallic-gradient p-8 rounded-xl flex flex-col gap-6 hover:-translate-y-2 transition"
-            >
-              <div className="w-14 h-14 flex items-center justify-center bg-primary/20 text-primary rounded-lg">
-                <span className="material-symbols-outlined text-3xl">
-                  {icon}
-                </span>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold text-white uppercase italic mb-4">
-                  {title}
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
-              </div>
-            </div>
+              title={title}
+              description={desc}
+              icon={icon}
+            />
           ))}
         </div>
         <div className=" mt-6 gap-4 flex justify-end ">

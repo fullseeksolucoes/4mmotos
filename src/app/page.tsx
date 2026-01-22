@@ -1,3 +1,4 @@
+import { Acessories } from "@/components/acessories/Acessories";
 import { Contact } from "@/components/contact/Contact";
 import { Footer } from "@/components/footer/Footer";
 import { Header } from "@/components/header/Header";
@@ -12,7 +13,7 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <Services />
-      {/* <About /> */}
+      <Acessories />
       <Contact />
       <Footer />
     </>

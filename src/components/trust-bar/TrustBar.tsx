@@ -23,7 +23,7 @@ export function TrustBar() {
   ];
 
   return (
-    <section className="bg-primary/10 py-10 border-y border-white/5">
+    <section className="bg-primary/10 py-10 border-y border-white/5" id="trust">
       <div className="max-w-7xl mx-auto px-6 lg:px-40">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {items.map((item) => (

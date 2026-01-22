@@ -1,15 +1,15 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
-import Link from "next/link";
+import { scrollToSection } from "@/lib/utils";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/80 border-b border-white/10">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/80 border-b border-white/10" id="header">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div>
-            <Link href="/" className="font-black text-xl text-primary">
-              4M Motos
-            </Link>
+            <span className="font-black text-xl text-primary">4MMotos</span>
           </div>
           <ul
             className="hidden md:flex space-x-8 items-center list-none"
@@ -17,7 +17,7 @@ export function Header() {
           >
             <li role="none">
               <a
-                href="#services"
+                onClick={() => scrollToSection("services")}
                 className="text-sm hover:text-primary transition-colors"
                 role="menuitem"
               >
@@ -26,7 +26,7 @@ export function Header() {
             </li>
             <li role="none">
               <a
-                href="#acessories"
+                onClick={() => scrollToSection("acessories")}
                 className="text-sm hover:text-primary transition-colors"
                 role="menuitem"
               >
@@ -35,7 +35,7 @@ export function Header() {
             </li>
             <li role="none">
               <a
-                href="#contact"
+                onClick={() => scrollToSection("contact")}
                 className="text-sm hover:text-primary transition-colors"
                 role="menuitem"
               >
